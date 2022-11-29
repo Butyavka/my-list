@@ -1,26 +1,27 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from 'react'
+import './App.css'
+import {BrowserRouter} from 'react-router-dom'
+import Router from './components/Router'
+import Navbar from './components/Navbar'
+import firebase from 'firebase/compat/app'
+
+firebase.initializeApp({
+  apiKey: 'AIzaSyDvuHAiGHhx2lnGllmWPZD8_xvlhuC7Uy8',
+  authDomain: 'my-list-533af.firebaseapp.com',
+  projectId: 'my-list-533af',
+  storageBucket: 'my-list-533af.appspot.com',
+  messagingSenderId: '712375835090',
+  appId: '1:712375835090:web:dea63d7ecd54df0d7b900b'
+})
+
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    <BrowserRouter>
+      <Navbar/>
+      <Router/>
+    </BrowserRouter>
+  )
 }
 
-export default App;
+export default App
